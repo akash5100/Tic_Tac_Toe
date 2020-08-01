@@ -1,7 +1,8 @@
 #include<stdio.h>
-char board[3][3];
 #define column 3
 
+char board[3][3];
+int winner=0;
 /*
 print rules
 promt user 1 
@@ -9,6 +10,11 @@ promt user 2
 display board
 */
 
+//get input
+void input1(int a, char board[column][column])
+{
+    board[1][1] = "X";
+}
 
 //print rules
 void rules()
@@ -29,7 +35,8 @@ int promt1() //X
     int A;
     printf("player 1 ~\n");
     scanf("%i",&A);
-    return A;
+    input1(A,board[1][1]);
+    return 0;
 }
 
 //promt player 2
@@ -38,7 +45,7 @@ int promt2() //O
     int A;
     printf("player 2 ~\n");
     scanf("%i",&A);
-    return A;
+    return 0;
 }
 
 //display board

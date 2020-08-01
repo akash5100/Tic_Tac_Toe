@@ -3,6 +3,11 @@
 #include <stdbool.h>
 
 
+int check_winner()
+{
+
+}
+
 bool checkrow()
 {
     //todo
@@ -21,11 +26,31 @@ bool checkcross()
     return true;
 }
 
-void play()
-{   printf("Tic Tac Toe\n   2 players\n");
-    printf("Player 1 - X\nPlayer 2 - O\n");
+int play()
+{   
+       
+    printf("Tic Tac Toe\n   2 players\n");
+    printf("Player 1 ~ X\nPlayer 2 ~ O\n");
     rules();
-    //displayboard(board);
+    printf("start\n");
+
+        for (int i = 0; i < 9 ; i++)
+        {
+            promt1();
+            winner = check_winner();
+                if (winner != 0)
+                {
+                    return 0;
+                }
+            promt2();
+            winner = check_winner();
+                if (winner != 0)
+                {
+                    return 0;
+                }
+        }
+        
+    displayboard(board);
 }
 
 int main(void)
