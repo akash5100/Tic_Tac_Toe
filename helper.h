@@ -1,9 +1,20 @@
 #include<stdio.h>
+#include<stdbool.h>
 #define column 3
 
 int board[3][3] = {0,0,0,0,0,0,0,0,0};
 int winner=0;
 
+bool checkcolumn();
+bool checkrow();
+void input1(int a);
+void input2(int a);
+void rules();
+int promt1();
+int promt2();
+void displayboard(int board[][column]);
+int check_winner();
+void declare_winner();
 
 //get input from player 1
 void input1(int a)
@@ -144,4 +155,29 @@ void displayboard(int board[][column])
     printf("\t  %i | %i  | %i  \n", board[1][0], board[1][1], board[1][2]); 
     printf("\t--------------\n"); 
     printf("\t  %i | %i  | %i  \n\n", board[2][0], board[2][1], board[2][2]);
+}
+
+//check the winner
+int check_winner()
+{
+    checkrow();
+    checkcolumn();
+    return 0;
+}
+
+//print winner 
+void declare_winner()
+{
+    if(winner == 1)
+    {
+        printf("winner player 1");
+    }
+    else
+    {
+        if(winner == 2)
+        {
+            printf("winner player 2");
+        }
+    }
+    
 }
