@@ -1,19 +1,104 @@
 #include<stdio.h>
 #define column 3
 
-char board[3][3];
+int board[3][3] = {0,0,0,0,0,0,0,0,0};
 int winner=0;
-/*
-print rules
-promt user 1 
-promt user 2
-display board
-*/
 
-//get input
-void input1(int a, char board[column][column])
+
+//get input from player 1
+void input1(int a)
 {
-    board[1][1] = "X";
+    switch (a)
+    {
+        case 1:
+            if(board[0][0] == 0)
+                board[0][0] = 1;
+            break;
+        case 2:
+            if(board[0][1] == 0)
+                board[0][1] = 1;
+            break;
+        case 3:
+            if(board[0][2] == 0)
+            board[0][2] = 1;
+            break;
+        case 4:
+            if(board[1][0]==0)
+            board[1][0] = 1;
+            break;
+        case 5:
+            if(board[1][1]==0)
+            board[1][1] = 1;
+            break;
+        case 6:
+            if(board[1][2]==0)
+            board[1][2] = 1;
+            break;
+        case 7:
+            if(board[2][0]==0)
+            board[2][0] = 1;
+            break;
+        case 8:
+            if(board[2][1]==0)
+            board[2][1] = 1;
+            break;
+        case 9:
+            if(board[2][2]==0)
+            board[2][2] = 1;
+            break;
+        default:
+            printf("number between 1~9");
+            break;
+    }
+        
+}
+
+//get input from player 2
+void input2(int a)
+{
+    switch (a)
+    {
+        case 1:
+            if(board[0][0] == 0)
+                board[0][0] = 2;
+            break;
+        case 2:
+            if(board[0][1] == 0)
+                board[0][1] = 2;
+            break;
+        case 3:
+            if(board[0][2] == 0)
+            board[0][2] = 2;
+            break;
+        case 4:
+            if(board[1][0]==0)
+            board[1][0] = 2;
+            break;
+        case 5:
+            if(board[1][1]==0)
+            board[1][1] = 2;
+            break;
+        case 6:
+            if(board[1][2]==0)
+            board[1][2] = 2;
+            break;
+        case 7:
+            if(board[2][0]==0)
+            board[2][0] = 2;
+            break;
+        case 8:
+            if(board[2][1]==0)
+            board[2][1] = 2;
+            break;
+        case 9:
+            if(board[2][2]==0)
+            board[2][2] = 2;
+            break;
+        default:
+            printf("number between 1~9");
+            break;
+    }
+        
 }
 
 //print rules
@@ -30,32 +115,33 @@ void rules()
 }
 
 //promt player 1
-int promt1() //X
+int promt1() //1
 {
     int A;
-    printf("player 1 ~\n");
+    printf("player 1 ~");
     scanf("%i",&A);
-    input1(A,board[1][1]);
+    input1(A);
     return 0;
 }
 
 //promt player 2
-int promt2() //O
+int promt2() //2
 {
     int A;
-    printf("player 2 ~\n");
+    printf("player 2 ~");
     scanf("%i",&A);
+    input2(A);
     return 0;
 }
 
 //display board
-void displayboard(char board[][column])
+void displayboard(int board[][column])
 {
     printf("\n\n"); 
       
-    printf("\t  %c | %c  | %c  \n", board[0][0], board[0][1], board[0][2]); 
+    printf("\t  %i | %i  | %i  \n", board[0][0], board[0][1], board[0][2]); 
     printf("\t--------------\n"); 
-    printf("\t  %c | %c  | %c  \n", board[1][0], board[1][1], board[1][2]); 
+    printf("\t  %i | %i  | %i  \n", board[1][0], board[1][1], board[1][2]); 
     printf("\t--------------\n"); 
-    printf("\t  %c | %c  | %c  \n\n", board[2][0], board[2][1], board[2][2]);
+    printf("\t  %i | %i  | %i  \n\n", board[2][0], board[2][1], board[2][2]);
 }
