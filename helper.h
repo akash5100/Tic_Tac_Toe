@@ -1,12 +1,11 @@
-#include<stdio.h>
-#include<stdbool.h>
+
 #define column 3
 
 int board[3][3] = {0,0,0,0,0,0,0,0,0};
 int winner=0;
 
-bool checkcolumn();
-bool checkrow();
+int checkcolumn();
+int checkrow();
 void input1(int a);
 void input2(int a);
 void rules();
@@ -59,7 +58,6 @@ void input1(int a)
             break;
         default:
             printf("number between 1~9");
-            break;
     }
         
 }
@@ -107,7 +105,6 @@ void input2(int a)
             break;
         default:
             printf("number between 1~9");
-            break;
     }
         
 }
@@ -163,21 +160,4 @@ int check_winner()
     checkrow();
     checkcolumn();
     return 0;
-}
-
-//print winner 
-void declare_winner()
-{
-    if(winner == 1)
-    {
-        printf("winner player 1");
-    }
-    else
-    {
-        if(winner == 2)
-        {
-            printf("winner player 2");
-        }
-    }
-    
 }

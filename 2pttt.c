@@ -1,15 +1,16 @@
 #include <stdio.h>
-#include "helper.h"
 #include <stdbool.h>
+#include "helper.h"
 
 
 
-bool checkrow()
+
+int checkrow()
 {
     if(board[0][0] == board[0][1] == board[0][2])
     {
         if (board[0][0] == 1)
-            winner = 1;
+            return 1;
         else{
             if (board[0][0] == 2)
                 winner = 2;
@@ -45,7 +46,7 @@ bool checkrow()
     }  
 }
 
-bool checkcolumn()
+int checkcolumn()
 {
     if(board[0][0] == board[1][0] == board[2][0])
     {
@@ -86,7 +87,7 @@ bool checkcolumn()
     }  
 }
 
-bool checkcross()
+int checkcross()
 {
     //todo
     return true;
