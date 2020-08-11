@@ -82,7 +82,7 @@ int checkcolumn()
             else
             {
                 return false;
-            }   
+            }
         }   
     }  
 }
